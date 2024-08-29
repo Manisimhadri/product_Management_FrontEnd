@@ -2,27 +2,30 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8080";
 
-class ProductService{
+class ProductService {
     
-    saveProduct(product){
+    saveProduct(product) {
         return axios.post(`${API_URL}/saveProduct`, product);
     }
 
-    getAllProduct(){
+    getAllProduct() {
         return axios.get(`${API_URL}/`);
     }
 
-    getProductById(id){
+    getProductById(id) {
         return axios.get(`${API_URL}/${id}`);
     }
 
-    deleteProduct(id){
+    deleteProduct(id) {
         return axios.delete(`${API_URL}/deleteProduct/${id}`);
     }
 
-    editProduct(product){
+    editProduct(product) {
         return axios.post(`${API_URL}/editProduct`, product);
     }
 }
 
-export default new ProductService();
+// Create an instance of ProductService
+const productServiceInstance = new ProductService();
+
+export default productServiceInstance;
